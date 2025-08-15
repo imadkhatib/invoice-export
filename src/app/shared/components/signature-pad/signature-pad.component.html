@@ -1,0 +1,46 @@
+<div class="signature-container" [class.error]="hasError" [class.disabled]="disabled">
+  <div class="signature-canvas-wrapper">
+    <canvas
+      #signatureCanvas
+      class="signature-canvas"
+      [class.error]="hasError"
+      (mousedown)="startDrawing($event)"
+      (mousemove)="draw($event)"
+      (mouseup)="stopDrawing($event)"
+      (mouseleave)="stopDrawing($event)"
+      (touchstart)="startDrawing($event)"
+      (touchmove)="draw($event)"
+      (touchend)="stopDrawing($event)"
+      (touchcancel)="stopDrawing($event)"></canvas>
+
+    <div class="signature-placeholder" *ngIf="isEmpty && !disabled">
+      <mat-icon>edit</mat-icon>
+      <span>{{ placeholder }}</span>
+    </div>
+
+    <div class="signature-disabled-overlay" *ngIf="disabled">
+      <mat-icon>block</mat-icon>
+      <span>Signature input disabled</span>
+    </div>
+  </div>
+
+  <div class="signature-controls">
+    <button
+      type="button"
+      mat-stroked-button
+      color="warn"
+      (click)="clearSignature()"
+      [disabled]="disabled || isEmpty"
+      matTooltip="Clear signature and start over">
+      <mat-icon>clear</mat-icon>
+      Clear Signature
+    </button>
+
+    <div class="signature-status" *ngIf="!isEmpty">
+      <mat-icon color="primary">check_circle</mat-icon>
+      <span>Signature captured</span>
+    </div>
+  </div>
+</div>
+<mat-error *ngIf="hasError">{{ getErrorMessage() }}</mat-error>
+

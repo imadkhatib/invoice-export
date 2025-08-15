@@ -1,0 +1,19 @@
+.card-section {
+  mat-card-title {
+    margin-bottom: 16px;
+    display: block;
+  }
+  background: linear-gradient(145deg, #f9fafc, #e3e7ef);
+  background-image: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.4) 0%, transparent 20%),
+  radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 25%);
+  background-size: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  color: #2a2a2a;
+
+  &.signature-section {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}

@@ -1,0 +1,24 @@
+.invoice-page-container {
+  min-height: 100vh;
+  background: linear-gradient(1deg, #6abbcf 0%, #2a4763 100%);
+
+  padding: 20px;
+
+  .page-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .actions {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: center;
+    @media (max-width: 768px) {
+      justify-content: stretch;
+      button {
+        flex: 1;
+      }
+    }
+  }
+}

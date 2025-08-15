@@ -1,0 +1,6 @@
+<mat-form-field [appearance]="appearance" class="field-width">
+  <mat-label>{{ label }}</mat-label>
+  <input matInput [formControl]="control" [type]="type" [placeholder]="placeholder">
+  <mat-icon *ngIf="icon !== ''" matSuffix>{{ icon }}</mat-icon>
+  <mat-error *ngIf="showError">{{ getErrorMessage() }}</mat-error>
+</mat-form-field>
